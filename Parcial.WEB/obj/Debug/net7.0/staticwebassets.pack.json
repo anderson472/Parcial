@@ -1,0 +1,97 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Projects\\Distribuida\\Parcial\\Parcial.WEB\\bin\\Debug\\net7.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "D:\\Projects\\Distribuida\\Parcial\\Parcial.WEB\\obj\\Debug\\net7.0\\build-gz\\Mys+dtxi.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "D:\\Projects\\Distribuida\\Parcial\\Parcial.WEB\\obj\\Debug\\net7.0\\scopedcss\\bundle\\Parcial.WEB.styles.css",
+      "PackagePath": "staticwebassets\\Parcial.WEB.styles.css"
+    },
+    {
+      "Id": "D:\\Projects\\Distribuida\\Parcial\\Parcial.WEB\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "D:\\Projects\\Distribuida\\Parcial\\Parcial.WEB\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\Distribuida\\Parcial\\Parcial.WEB\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\Distribuida\\Parcial\\Parcial.WEB\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "PackagePath": "staticwebassets\\css\\open-iconic"
+    },
+    {
+      "Id": "D:\\Projects\\Distribuida\\Parcial\\Parcial.WEB\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "PackagePath": "staticwebassets\\css\\open-iconic"
+    },
+    {
+      "Id": "D:\\Projects\\Distribuida\\Parcial\\Parcial.WEB\\wwwroot\\css\\open-iconic\\README.md",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\README.md"
+    },
+    {
+      "Id": "D:\\Projects\\Distribuida\\Parcial\\Parcial.WEB\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\Distribuida\\Parcial\\Parcial.WEB\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
+    },
+    {
+      "Id": "D:\\Projects\\Distribuida\\Parcial\\Parcial.WEB\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
+    },
+    {
+      "Id": "D:\\Projects\\Distribuida\\Parcial\\Parcial.WEB\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
+    },
+    {
+      "Id": "D:\\Projects\\Distribuida\\Parcial\\Parcial.WEB\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
+    },
+    {
+      "Id": "D:\\Projects\\Distribuida\\Parcial\\Parcial.WEB\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
+    },
+    {
+      "Id": "D:\\Projects\\Distribuida\\Parcial\\Parcial.WEB\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "D:\\Projects\\Distribuida\\Parcial\\Parcial.WEB\\wwwroot\\icon-192.png",
+      "PackagePath": "staticwebassets\\icon-192.png"
+    },
+    {
+      "Id": "D:\\Projects\\Distribuida\\Parcial\\Parcial.WEB\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "D:\\Projects\\Distribuida\\Parcial\\Parcial.WEB\\wwwroot\\sample-data\\weather.json",
+      "PackagePath": "staticwebassets\\sample-data\\weather.json"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Parcial.WEB.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.Parcial.WEB.props",
+      "PackagePath": "build\\Parcial.WEB.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.Parcial.WEB.props",
+      "PackagePath": "buildMultiTargeting\\Parcial.WEB.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.Parcial.WEB.props",
+      "PackagePath": "buildTransitive\\Parcial.WEB.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
