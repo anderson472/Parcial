@@ -35,23 +35,12 @@
                     <div class="mb-6">
                         <label>Fecha de Uso:</label>
                         <div>
-                            <InputDate class="form-control" @bind-Value="@EventControl.Fecha_De_Uso" />
+                            <input @bind="@EventControl.Fecha_De_Uso" @bind:format="yyyy'-'MM'-'dd'T'HH':'mm':'ss (*)" />
+
+                            <InputDate @bind-Value="@EventControl.Fecha_De_Uso" @bind-Value:format="yyyy'-'MM'-'dd'T'HH':'mm':'ss (*)"></InputDate>
                             <ValidationMessage For="@(() => EventControl.Fecha_De_Uso)" />
                         </div>
                     </div>
-
-
-                    @*   <label>Porteria:</label>
-                    <div>
-                    <InputCheckbox class="form-select" @bind-value="EventControl.Porteria">
-                    @foreach (var gatesType in Enum.GetValues(typeof(GatesType)))
-                    {
-                    <option value="@gatesType">@(gatesType.ToString())</option>
-                    }
-
-
-                    </InputCheckbox>
-                    </div>*@
                     <div class="mb-6">
                         <label>Porteria:</label>
                         <div>

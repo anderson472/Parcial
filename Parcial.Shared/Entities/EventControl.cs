@@ -18,8 +18,7 @@ namespace Parcial.Shared.Entities
         [Display(Name = "Porteria")]
         public string? Porteria { get; set; }
 
-        [NotMapped]
-        public GatesType TipoPorteria { get; set; }
+    
 
 
 

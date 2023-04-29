@@ -201,15 +201,15 @@
       "mscorlib.dll": "sha256-qqpKd+W+AFb6UxudEYEKzrz7ma81p5LrWUwPBVvHV4U=",
       "netstandard.dll": "sha256-OYYuPT3JUknj4LdYIa58zF7kDB3tCnLzjCSuhEjtKXM=",
       "System.Private.CoreLib.dll": "sha256-EVS7zPxPV\/41g2mzPwdXtwiigWxI\/SeAHme1IgyD6tc=",
-      "Parcial.Shared.dll": "sha256-O364yvaciA+2njNtrQpJQNx+jhmgZXIS5rESziQJaQM=",
-      "Parcial.WEB.dll": "sha256-01LAwPtV0DkCGGhKPvq7HpvWJikF\/osboBpjeZ+f9yY="
+      "Parcial.Shared.dll": "sha256-3rqSAOPwhHROKO6ACi7QSJvhQCePRBn9LB+hh6EeVWE=",
+      "Parcial.WEB.dll": "sha256-a8Uk2eeC29IvcU7yfYOSq2N2CiZfPXL0WsnkjAT4bBA="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "Parcial.Shared.pdb": "sha256-NtdiswWuUenquFTeswQ5a\/2k9HLX4z5sk\/CvdJ8OBD0=",
-      "Parcial.WEB.pdb": "sha256-WkQTqV61R17nYxERbhyjJBtGpRt3KVPE8OMeHQXSPOY="
+      "Parcial.Shared.pdb": "sha256-Qomwa4O0F1qlj3fwy22yQHBYQjCMzouvPYyPWU6PR7g=",
+      "Parcial.WEB.pdb": "sha256-54WWQR8Eb0HyySLHErPlOEnRw+qKCK7WZDPGcCBWXJU="
     },
     "runtime": {
       "dotnet.7.0.5.xrw203zvy5.js": "sha256-codB25EodaFEP43MDCfMBuKXU4LqurUKnQrpoMIFnPs=",
