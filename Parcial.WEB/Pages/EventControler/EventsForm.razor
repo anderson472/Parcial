@@ -4,16 +4,76 @@
 
 <EditForm EditContext="editContext" OnValidSubmit="OnValidSubmit">
     <DataAnnotationsValidator />
-    <div class="mb-3">
-        <label>Eventos:</label>
-        <div>
-            <InputNumber class="form-control" @bind-Value="@EventControl.Id_Boleta" />
-            <ValidationMessage For="@(() => EventControl.Id_Boleta)" />
+
+    <div class="content">
+
+        <div class="card-body">
+            <div class="row">
+
+
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label>Eventos:</label>
+                        <div>
+                            <InputNumber class="form-control" @bind-Value="@EventControl.Id_Boleta" />
+                            <ValidationMessage For="@(() => EventControl.Id_Boleta)" />
+                        </div>
+                    </div>
+
+                      <div class="mb-3">
+                        <label>Es Usada:</label>
+                      <div>
+                            <InputCheckbox class="form-control" @bind-Value="@EventControl.Fue_Usada" />
+                            <ValidationMessage For="@(() => EventControl.Fue_Usada)" />
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label>Fecha de Uso:</label>
+                        <div>
+                            <InputDate class="form-control" @bind-Value="@EventControl.Fecha_De_Uso" />
+                            <ValidationMessage For="@(() => EventControl.Fecha_De_Uso)" />
+                        </div>
+                    </div>
+
+                </div>
+                     @*   <label>Porteria:</label>
+                        <div>
+                        <InputCheckbox class="form-select" @bind-value="EventControl.Porteria">
+                                @foreach (var gatesType in Enum.GetValues(typeof(GatesType)))
+                                {
+                                    <option value="@gatesType">@(gatesType.ToString())</option>
+                                }
+
+
+                            </InputCheckbox>
+                        </div>*@
+                  <div class="mb-3">
+                        <label>Porteria:</label>
+                        <div>
+                            <InputSelect class="form-select" @bind-Value="EventControl.Porteria">
+                                @foreach (var gatesType in Enum.GetValues(typeof(GatesType)))
+                                {
+                                    <option value="@gatesType">@(gatesType.ToString())</option>
+                                }
+
+
+                            </InputSelect>
+                        </div>
+                    </div>
+                  
+
+            </div>
         </div>
     </div>
     <button class="btn btn-primary" type="submit">Guardar Cambios</button>
     <button class="btn btn-success" @onclick="ReturnAction">Regresar</button>
 </EditForm>
+
+
 
 @code {
     private EditContext editContext = null!;

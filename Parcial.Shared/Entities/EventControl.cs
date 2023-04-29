@@ -1,7 +1,6 @@
 ﻿using Parcial.Shared.Enums;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Xml.Linq;
 
 namespace Parcial.Shared.Entities
 {
@@ -14,7 +13,7 @@ namespace Parcial.Shared.Entities
         public DateTime? Fecha_De_Uso { get; set; }
 
         [Display(Name = "Es Usada")]
-        public bool? Fue_Usada { get; set; }
+        public bool Fue_Usada { get; set; }
 
         [Display(Name = "Porteria")]
         public string? Porteria { get; set; }

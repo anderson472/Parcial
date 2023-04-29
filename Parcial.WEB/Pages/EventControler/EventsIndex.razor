@@ -61,8 +61,8 @@ else
                                         @events.Porteria
                                     </td>
                                     <td>
-                                 
-                                        <a @onclick=@(() => ShowModal(events.Id_Boleta, true)) class="btn btn-warning btn-sm"><i class="oi oi-pencil" /> Editar</a>
+
+                                        <a @onclick=@(() => ShowModal(events.Id_Boleta )) class="btn btn-warning"><i class="oi oi-pencil" /> Editar</a>
                                         @*<button class="btn btn-danger btn-sm" @onclick=@(() => DeleteAsync(companies.Id))><i class="oi oi-trash" /> Borrar</button>*@
                                     </td>
                                 </tr>
@@ -123,6 +123,7 @@ else
             var responseHppt = await repository.Get<List<EventControl>>(url1);
             var responseHppt2 = await repository.Get<int>(url2);
             Events = responseHppt.Response!;
+                     
             totalPages = responseHppt2.Response!;
         }
         catch (Exception ex)
@@ -130,6 +131,23 @@ else
             await sweetAlertService.FireAsync("Error", ex.Message, SweetAlertIcon.Error);
         }
     }
+
+    //private async Task ShowMessageAsync()
+    //{
+    //    var result = await sweetAlertService.FireAsync(new SweetAlertOptions
+    //        {
+    //            Title = "Confirmación",
+    //            Text = "La boleta no existe",
+    //            Icon = SweetAlertIcon.Question,
+    //            ShowCancelButton = false,
+    //        });
+
+
+
+    //    return;
+    //}
+
+
 
     private async Task SelectedPageAsync(int page)
     {
@@ -155,7 +173,7 @@ else
             return;
         }
 
-        var responseHttp = await repository.Delete($"/api/companies/{id}");
+        var responseHttp = await repository.Delete($"/api/eventsControl/{id}");
         if (responseHttp.Error)
         {
             if (responseHttp.HttpResponseMessage.StatusCode != HttpStatusCode.NotFound)
@@ -188,19 +206,21 @@ else
 
         if (isEdit)
         {
-            //modalReference = Modal.Show<CompanyEdit>(string.Empty, new ModalParameters().Add("Id", id));
+            modalReference = Modal.Show<EventsEdit>(string.Empty, new ModalParameters().Add("Id_Boleta", id));
         }
         else
         {
-            //modalReference = Modal.Show<CompanyCreate>();
+            modalReference = Modal.Show<EventsEdit>();
         }
 
-        //var result = await modalReference.Result;
-        //if (result.Confirmed)
-        //{
-        //    await LoadAsync();
-        //}
+        var result = await modalReference.Result;
+        if (result.Confirmed)
+        {
+            await LoadAsync();
+        }
     }
+
+   
 
 
   }

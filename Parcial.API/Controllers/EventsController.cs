@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using Parcial.API.Helpers;
 using Parcial.API.Data;
 using Parcial.Shared.DTOs;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace Parcial.API.Controllers
 {
@@ -66,18 +65,18 @@ namespace Parcial.API.Controllers
                 .ToListAsync());
         }
 
-        [HttpGet("{id:int}")]
-        public async Task<IActionResult> GetAsync(int id)
-        {
-            var eventControl = await _context.eventControl
+        //[HttpGet("{id:int}")]
+        //public async Task<IActionResult> GetAsync(int id)
+        //{
+        //    var eventControl = await _context.eventControl
 
-                .FirstOrDefaultAsync(x => x.Id_Boleta == id);
-            if (eventControl == null)
-            {
-                return NotFound();
-            }
-            return Ok(eventControl);
-        }
+        //        .FirstOrDefaultAsync(x => x.Id_Boleta == id);
+        //    if (eventControl == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return Ok(eventControl);
+        //}
 
         [HttpPut]
         public async Task<ActionResult> PutAsync(EventsController eventControl)
@@ -103,18 +102,18 @@ namespace Parcial.API.Controllers
             }
         }
 
-        [HttpDelete("{id:int}")]
-        public async Task<IActionResult> DeleteAsync(int id)
-        {
-            var eventControl = await _context.eventControl.FirstOrDefaultAsync(x => x.Id_Boleta == id);
-            if (eventControl == null)
-            {
-                return NotFound();
-            }
+        //[HttpDelete("{id:int}")]
+        //public async Task<IActionResult> DeleteAsync(int id)
+        //{
+        //    var eventControl = await _context.eventControl.FirstOrDefaultAsync(x => x.Id_Boleta == id);
+        //    if (eventControl == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            _context.Remove(eventControl);
-            await _context.SaveChangesAsync();
-            return NoContent();
-        }
+        //    _context.Remove(eventControl);
+        //    await _context.SaveChangesAsync();
+        //    return NoContent();
+        //}
     }
 }
