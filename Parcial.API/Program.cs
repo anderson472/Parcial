@@ -1,4 +1,8 @@
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
+using Parcial.API.Helpers;
+using Parcial.Shared.Entities;
+using System.Text;
 using Parcial.API.Services;
 using Parcial.API.Data;
 
@@ -6,6 +10,8 @@ using Parcial.API.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddControllers()
+    .AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -40,4 +46,10 @@ void SeedData(WebApplication app)
 
     app.MapControllers();
 
-    app.Run();
+app.UseCors(x => x
+    .AllowAnyMethod()
+    .AllowAnyHeader()
+    .SetIsOriginAllowed(origin => true)
+    .AllowCredentials());
+
+app.Run();

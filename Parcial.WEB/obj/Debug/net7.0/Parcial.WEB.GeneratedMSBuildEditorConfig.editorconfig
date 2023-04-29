@@ -24,6 +24,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Projects/Distribuida/Parcial/Parcial.WEB/Pages/EventControler/EventsForm.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnRDb250cm9sZXJcRXZlbnRzRm9ybS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Projects/Distribuida/Parcial/Parcial.WEB/Pages/EventControler/EventsIndex.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnRDb250cm9sZXJcRXZlbnRzSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
@@ -34,6 +38,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Projects/Distribuida/Parcial/Parcial.WEB/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Projects/Distribuida/Parcial/Parcial.WEB/Shared/Pagination.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFBhZ2luYXRpb24ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Projects/Distribuida/Parcial/Parcial.WEB/Shared/SurveyPrompt.razor]

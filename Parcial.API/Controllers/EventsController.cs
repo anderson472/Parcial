@@ -9,7 +9,7 @@ using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 namespace Parcial.API.Controllers
 {
     [ApiController]
-    [Route("/api/eventsController")]
+    [Route("/api/eventsControl")]
     public class EventsController : ControllerBase
     {
 
