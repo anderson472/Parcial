@@ -16,7 +16,7 @@ namespace Parcial.API.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<EventControl>().HasIndex("Id_Boleta").IsUnique();
+            modelBuilder.Entity<EventControl>().HasIndex("Id").IsUnique();
 
         }
     }

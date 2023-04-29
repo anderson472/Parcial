@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using Parcial.API.Helpers;
 using Parcial.API.Data;
@@ -8,17 +7,17 @@ using Parcial.Shared.DTOs;
 namespace Parcial.API.Controllers
 {
     [ApiController]
-    [Route("/api/eventsControl")]
-    public class EventsController : ControllerBase
+    [Route("/api/systemControl")]
+    public class systemController : ControllerBase
     {
 
         private readonly DataContext _context;
 
-        public EventsController(DataContext context)
+        public systemController(DataContext context)
         {
             _context = context;
         }
-        [AllowAnonymous]
+     
         [HttpGet("combo")]
         public async Task<ActionResult> GetCombo()
         {
@@ -33,11 +32,11 @@ namespace Parcial.API.Controllers
 
             if (!string.IsNullOrWhiteSpace(pagination.Filter))
             {
-                queryable = queryable.Where(x => x.Id_Boleta.ToString().Contains(pagination.Filter.ToLower()));
+                queryable = queryable.Where(x => x.Id.ToString().Contains(pagination.Filter.ToLower()));
             }
 
             return Ok(await queryable
-                .OrderBy(x => x.Id_Boleta)
+                .OrderBy(x => x.Id)
                 .Paginate(pagination)
                 .ToListAsync());
         }
@@ -49,7 +48,7 @@ namespace Parcial.API.Controllers
 
             if (!string.IsNullOrWhiteSpace(pagination.Filter))
             {
-                queryable = queryable.Where(x => x.Id_Boleta.ToString().Contains(pagination.Filter.ToLower()));
+                queryable = queryable.Where(x => x.Id.ToString().Contains(pagination.Filter.ToLower()));
             }
 
             double count = await queryable.CountAsync();
@@ -65,33 +64,33 @@ namespace Parcial.API.Controllers
                 .ToListAsync());
         }
 
-        //[HttpGet("{id:int}")]
-        //public async Task<IActionResult> GetAsync(int id)
-        //{
-        //    var eventControl = await _context.eventControl
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> GetAsync(int id)
+        {
+            var eventControl = await _context.eventControl
 
-        //        .FirstOrDefaultAsync(x => x.Id_Boleta == id);
-        //    if (eventControl == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return Ok(eventControl);
-        //}
+                .FirstOrDefaultAsync(x => x.Id == id);
+            if (eventControl == null)
+            {
+                return NotFound();
+            }
+            return Ok(eventControl);
+        }
 
         [HttpPut]
-        public async Task<ActionResult> PutAsync(EventsController eventControl)
+        public async Task<ActionResult> PutAsync(systemController ticket)
         {
             try
             {
-                _context.Update(eventControl);
+                _context.Update(ticket);
                 await _context.SaveChangesAsync();
-                return Ok(eventControl);
+                return Ok(ticket);
             }
             catch (DbUpdateException dbUpdateException)
             {
                 if (dbUpdateException.InnerException!.Message.Contains("duplicate"))
                 {
-                    return BadRequest("Ya existe un ticket con el mismo código");
+                    return BadRequest("Ya existe un país con el mismo nombre.");
                 }
 
                 return BadRequest(dbUpdateException.Message);
@@ -102,18 +101,18 @@ namespace Parcial.API.Controllers
             }
         }
 
-        //[HttpDelete("{id:int}")]
-        //public async Task<IActionResult> DeleteAsync(int id)
-        //{
-        //    var eventControl = await _context.eventControl.FirstOrDefaultAsync(x => x.Id_Boleta == id);
-        //    if (eventControl == null)
-        //    {
-        //        return NotFound();
-        //    }
+        [HttpDelete("{id:int}")]
+        public async Task<IActionResult> DeleteAsync(int id)
+        {
+            var eventControl = await _context.eventControl.FirstOrDefaultAsync(x => x.Id == id);
+            if (eventControl == null)
+            {
+                return NotFound();
+            }
 
-        //    _context.Remove(eventControl);
-        //    await _context.SaveChangesAsync();
-        //    return NoContent();
-        //}
+            _context.Remove(eventControl);
+            await _context.SaveChangesAsync();
+            return NoContent();
+        }
     }
 }

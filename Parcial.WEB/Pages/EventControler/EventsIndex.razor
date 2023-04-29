@@ -1,4 +1,4 @@
-﻿@page "/eventsControl"
+﻿@page "/systemControl"
 @inject IRepository repository
 @inject NavigationManager navigationManager
 @inject SweetAlertService sweetAlertService
@@ -49,7 +49,7 @@ else
                             {
                                 <tr>
                                     <td>
-                                        @events.Id_Boleta
+                                        @events.Id
                                     </td>
                                      <td>
                                         @events.Fecha_De_Uso
@@ -62,7 +62,7 @@ else
                                     </td>
                                     <td>
 
-                                        <a @onclick=@(() => ShowModal(events.Id_Boleta )) class="btn btn-warning"><i class="oi oi-pencil" /> Editar</a>
+                                        <a href="/systemControl/edit/@events.Id" class="btn btn-warning"><i class="oi oi-pencil" /> Editar</a>
                                         @*<button class="btn btn-danger btn-sm" @onclick=@(() => DeleteAsync(companies.Id))><i class="oi oi-trash" /> Borrar</button>*@
                                     </td>
                                 </tr>
@@ -109,13 +109,13 @@ else
 
         if (string.IsNullOrEmpty(Filter))
         {
-            url1 = $"api/eventsControl?page={page}";
-            url2 = $"api/eventsControl/totalPages";
+            url1 = $"api/systemControl?page={page}";
+            url2 = $"api/systemControl/totalPages";
         }
         else
         {
-            url1 = $"api/eventsControl?page={page}&filter={Filter}";
-            url2 = $"api/eventsControl/totalPages?filter={Filter}";
+            url1 = $"api/systemControl?page={page}&filter={Filter}";
+            url2 = $"api/systemControl/totalPages?filter={Filter}";
         }
 
         try
@@ -123,7 +123,10 @@ else
             var responseHppt = await repository.Get<List<EventControl>>(url1);
             var responseHppt2 = await repository.Get<int>(url2);
             Events = responseHppt.Response!;
-                     
+            if (Events.Count == 0)
+            {
+                ShowMessageAsync();
+            }
             totalPages = responseHppt2.Response!;
         }
         catch (Exception ex)
@@ -132,20 +135,18 @@ else
         }
     }
 
-    //private async Task ShowMessageAsync()
-    //{
-    //    var result = await sweetAlertService.FireAsync(new SweetAlertOptions
-    //        {
-    //            Title = "Confirmación",
-    //            Text = "La boleta no existe",
-    //            Icon = SweetAlertIcon.Question,
-    //            ShowCancelButton = false,
-    //        });
+    private async Task ShowMessageAsync()
+    {
+        var result = await sweetAlertService.FireAsync(new SweetAlertOptions
+            {
+                Title = "Confirmación",
+                Text = "La boleta no válida",
+                Icon = SweetAlertIcon.Question,
+                ShowCancelButton = false,
+            });
 
-
-
-    //    return;
-    //}
+        return;
+    }
 
 
 
@@ -173,7 +174,7 @@ else
             return;
         }
 
-        var responseHttp = await repository.Delete($"/api/eventsControl/{id}");
+        var responseHttp = await repository.Delete($"/api/systemControl/{id}");
         if (responseHttp.Error)
         {
             if (responseHttp.HttpResponseMessage.StatusCode != HttpStatusCode.NotFound)
@@ -206,7 +207,7 @@ else
 
         if (isEdit)
         {
-            modalReference = Modal.Show<EventsEdit>(string.Empty, new ModalParameters().Add("Id_Boleta", id));
+            modalReference = Modal.Show<EventsEdit>(string.Empty, new ModalParameters().Add("Id", id));
         }
         else
         {

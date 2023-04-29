@@ -24,11 +24,11 @@ namespace Parcial.API.Migrations
 
             modelBuilder.Entity("Parcial.Shared.Entities.EventControl", b =>
                 {
-                    b.Property<int>("Id_Boleta")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id_Boleta"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime?>("Fecha_De_Uso")
                         .HasColumnType("datetime2");
@@ -39,9 +39,9 @@ namespace Parcial.API.Migrations
                     b.Property<string>("Porteria")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id_Boleta");
+                    b.HasKey("Id");
 
-                    b.HasIndex("Id_Boleta")
+                    b.HasIndex("Id")
                         .IsUnique();
 
                     b.ToTable("eventControl");

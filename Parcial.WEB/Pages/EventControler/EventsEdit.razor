@@ -1,4 +1,4 @@
-﻿@page "/eventsControl/edit/{Id:int}"
+﻿@page "/systemControl/edit/{Id:int}"
 @inject IRepository repository
 @inject NavigationManager navigationManager
 @inject SweetAlertService sweetAlertService
@@ -26,12 +26,12 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        var responseHttp = await repository.Get<EventControl>($"/api/eventsControl/{Id}");
+        var responseHttp = await repository.Get<EventControl>($"/api/systemControl/{Id}");
         if (responseHttp.Error)
         {
             if (responseHttp.HttpResponseMessage.StatusCode == HttpStatusCode.NotFound)
             {
-                navigationManager.NavigateTo("/eventsControl");
+                navigationManager.NavigateTo("/systemControl");
                 return;
             }
 
@@ -46,7 +46,7 @@ else
 
     private async Task EditAsync()
     {
-        var responseHttp = await repository.Put("/api/eventsControl", eventControl);
+        var responseHttp = await repository.Put("/api/systemControl", eventControl);
         if (responseHttp.Error)
         {
             var message = await responseHttp.GetErrorMessageAsync();
@@ -60,6 +60,6 @@ else
     private void Return()
     {
         eventForm!.FormPostedSuccessfully = true;
-        navigationManager.NavigateTo("/eventsControl");
+        navigationManager.NavigateTo("/systemControl");
     }
 }

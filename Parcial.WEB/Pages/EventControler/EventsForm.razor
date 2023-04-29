@@ -12,18 +12,19 @@
 
 
                 <div class="col-6">
-                    <div class="mb-3">
+                    <div class="mb-6">
                         <label>Eventos:</label>
                         <div>
-                            <InputNumber class="form-control" @bind-Value="@EventControl.Id_Boleta" />
-                            <ValidationMessage For="@(() => EventControl.Id_Boleta)" />
+                            <InputNumber class="form-control" @bind-Value="@EventControl.Id" />
+                            <ValidationMessage For="@(() => EventControl.Id)" />
                         </div>
                     </div>
 
-                      <div class="mb-3">
+                    <div class="mb-6">
                         <label>Es Usada:</label>
-                      <div>
-                            <InputCheckbox class="form-control" @bind-Value="@EventControl.Fue_Usada" />
+                        <div>
+                            @*<InputCheckbox class="form-control" @bind-Value="@EventControl.Fue_Usada" />*@
+                            <input type="checkbox"  @bind="@EventControl.Fue_Usada" value="" />
                             <ValidationMessage For="@(() => EventControl.Fue_Usada)" />
                         </div>
                     </div>
@@ -31,7 +32,7 @@
                 </div>
 
                 <div class="col-6">
-                    <div class="mb-3">
+                    <div class="mb-6">
                         <label>Fecha de Uso:</label>
                         <div>
                             <InputDate class="form-control" @bind-Value="@EventControl.Fecha_De_Uso" />
@@ -39,19 +40,19 @@
                         </div>
                     </div>
 
-                </div>
-                     @*   <label>Porteria:</label>
-                        <div>
-                        <InputCheckbox class="form-select" @bind-value="EventControl.Porteria">
-                                @foreach (var gatesType in Enum.GetValues(typeof(GatesType)))
-                                {
-                                    <option value="@gatesType">@(gatesType.ToString())</option>
-                                }
+
+                    @*   <label>Porteria:</label>
+                    <div>
+                    <InputCheckbox class="form-select" @bind-value="EventControl.Porteria">
+                    @foreach (var gatesType in Enum.GetValues(typeof(GatesType)))
+                    {
+                    <option value="@gatesType">@(gatesType.ToString())</option>
+                    }
 
 
-                            </InputCheckbox>
-                        </div>*@
-                  <div class="mb-3">
+                    </InputCheckbox>
+                    </div>*@
+                    <div class="mb-6">
                         <label>Porteria:</label>
                         <div>
                             <InputSelect class="form-select" @bind-Value="EventControl.Porteria">
@@ -59,12 +60,11 @@
                                 {
                                     <option value="@gatesType">@(gatesType.ToString())</option>
                                 }
-
-
                             </InputSelect>
                         </div>
                     </div>
-                  
+                </div>
+
 
             </div>
         </div>

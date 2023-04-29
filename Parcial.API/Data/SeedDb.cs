@@ -1,10 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Parcial.API.Helpers;
-using Parcial.API.Services;
-using Parcial.Shared.Entities;
-using Parcial.Shared.Enums;
-using Parcial.Shared.Responses;
-using System.Net;
+﻿using Parcial.Shared.Entities;
 
 namespace Parcial.API.Data
 {
@@ -31,8 +25,8 @@ namespace Parcial.API.Data
             {
                 Event.Add(new EventControl { Fecha_De_Uso = DateTime.Now, Fue_Usada = false, Porteria = "Basic" });
             }
-              _context.eventControl.AddRange(Event);
-                await _context.SaveChangesAsync();
+            _context.eventControl.AddRange(Event);
+            await _context.SaveChangesAsync();
 
         }
     }

@@ -6,13 +6,13 @@ namespace Parcial.Shared.Entities
 {
     public class EventControl
     {
-        [Key]
-        public int Id_Boleta { get; set; }
+        
+        public int Id { get; set; }
 
-        [Display(Name = "Fecha de Uso")]
+        [Display(Name = "Fecha_de_Uso")]
         public DateTime? Fecha_De_Uso { get; set; }
 
-        [Display(Name = "Es Usada")]
+        [Display(Name = "Es_Usada")]
         public bool Fue_Usada { get; set; }
 
         [Display(Name = "Porteria")]
