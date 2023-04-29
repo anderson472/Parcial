@@ -1,0 +1,12 @@
+D:\Projects\Distribuida\Parcial\Parcial.Shared\bin\Debug\net7.0\Parcial.Shared.deps.json
+D:\Projects\Distribuida\Parcial\Parcial.Shared\bin\Debug\net7.0\Parcial.Shared.dll
+D:\Projects\Distribuida\Parcial\Parcial.Shared\bin\Debug\net7.0\Parcial.Shared.pdb
+D:\Projects\Distribuida\Parcial\Parcial.Shared\obj\Debug\net7.0\Parcial.Shared.csproj.AssemblyReference.cache
+D:\Projects\Distribuida\Parcial\Parcial.Shared\obj\Debug\net7.0\Parcial.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Distribuida\Parcial\Parcial.Shared\obj\Debug\net7.0\Parcial.Shared.AssemblyInfoInputs.cache
+D:\Projects\Distribuida\Parcial\Parcial.Shared\obj\Debug\net7.0\Parcial.Shared.AssemblyInfo.cs
+D:\Projects\Distribuida\Parcial\Parcial.Shared\obj\Debug\net7.0\Parcial.Shared.csproj.CoreCompileInputs.cache
+D:\Projects\Distribuida\Parcial\Parcial.Shared\obj\Debug\net7.0\Parcial.Shared.dll
+D:\Projects\Distribuida\Parcial\Parcial.Shared\obj\Debug\net7.0\refint\Parcial.Shared.dll
+D:\Projects\Distribuida\Parcial\Parcial.Shared\obj\Debug\net7.0\Parcial.Shared.pdb
+D:\Projects\Distribuida\Parcial\Parcial.Shared\obj\Debug\net7.0\ref\Parcial.Shared.dll
